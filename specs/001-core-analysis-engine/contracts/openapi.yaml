@@ -1,0 +1,150 @@
+openapi: 3.0.0
+info:
+  title: Black Swan Core Analysis API
+  version: 0.1.0
+paths:
+  /analyze:
+    post:
+      summary: Analyze natural language architecture description
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  example: "Next.js + Node.js + PostgreSQL + Redis for 2M users"
+      responses:
+        '200':
+          description: Analysis successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisResult'
+
+  /simulate:
+    post:
+      summary: Simulate load/failure on an architecture
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                architecture_id:
+                  type: string
+                  format: uuid
+                load_scenario:
+                  type: string
+                  example: "2M concurrent users"
+      responses:
+        '200':
+          description: Simulation successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimulationResult'
+
+  /search-similar:
+    post:
+      summary: Search for similar architectures in Qdrant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                architecture_id:
+                  type: string
+                  format: uuid
+                limit:
+                  type: integer
+                  default: 3
+      responses:
+        '200':
+          description: Search successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnalysisResult'
+
+components:
+  schemas:
+    AnalysisResult:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/Edge'
+        risks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Risk'
+        bottlenecks:
+          type: array
+          items:
+            type: string
+        recommendations:
+          type: array
+          items:
+            type: string
+
+    Node:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        type:
+          type: string
+
+    Edge:
+      type: object
+      properties:
+        id:
+          type: string
+        source:
+          type: string
+        target:
+          type: string
+
+    Risk:
+      type: object
+      properties:
+        severity:
+          type: string
+        category:
+          type: string
+        description:
+          type: string
+
+    SimulationResult:
+      type: object
+      properties:
+        failed_nodes:
+          type: array
+          items:
+            type: string
+        bottlenecks:
+          type: array
+          items:
+            type: string
+        failure_propagation:
+          type: array
+          items:
+            type: object

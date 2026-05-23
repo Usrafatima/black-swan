@@ -1,55 +1,53 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- 
+Sync Impact Report
+- Version change: 0.0.0 → 0.1.0
+- Modified principles: Initialized core principles for project 'Black Swan'.
+- Added sections: Core Principles (SDD, API-First, Graph-Native, Vector-Search, Type Safety, Containerization), Governance.
+- Removed sections: None.
+- Templates requiring updates: ✅ .specify/templates/plan-template.md, ✅ .specify/templates/spec-template.md, ✅ .specify/templates/tasks-template.md.
+- Follow-up TODOs: None.
+-->
+
+# Black Swan Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Development (SDD)
+All development work MUST start with a formal specification (`/specs/<feature>/spec.md`), followed by an implementation plan (`plan.md`) and a task list (`tasks.md`). Implementation only begins after the architect approves the task list.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. API-First Architecture
+The FastAPI backend serves as the single source of truth for business logic and data. The frontend MUST interact with the backend via well-defined, documented API contracts. No direct database access or logic leakage into the frontend is permitted.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Graph-Native Interaction
+The primary user interface leverages React Flow for node-based visualization and interaction. UI components MUST be modular, state-managed, and optimized for performance within a dynamic canvas environment.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Vector-Search Intelligence
+Leveraging Qdrant, the system prioritizes semantic retrieval. All entities and unstructured data SHOULD be considered for vector embeddings to enable similarity-based discovery and AI-driven insights.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. End-to-End Type Safety
+Rigorous type safety MUST be maintained across the stack. Frontend development uses TypeScript with strict mode. Backend development utilizes Python type hints and Pydantic models for data validation and serialization.
 
-### [PRINCIPLE_6_NAME]
+### VI. Container-First Environment
+To ensure "run anywhere" consistency, the entire environment—including the Next.js frontend, FastAPI backend, and Qdrant database—MUST be manageable and reproducible via Docker Compose.
 
+## Technology Stack
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- **Frontend**: Next.js (TypeScript), React Flow, TailwindCSS
+- **Backend**: FastAPI (Python 3.11+), Pydantic
+- **Vector DB**: Qdrant
+- **DevOps**: Docker, Docker Compose
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Amendment Procedure
+The constitution is a living document. Amendments may be proposed through a Pull Request. Every amendment MUST include a rationale and a version bump.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Versioning Policy
+- **MAJOR**: Changes that redefine core project identity or remove fundamental principles.
+- **MINOR**: Addition of new principles or significant updates to existing ones.
+- **PATCH**: Clarifications, formatting, and typo fixes.
+
+### Compliance
+All architectural plans (`plan.md`) must include a "Constitution Check" section to verify alignment with these principles.
+
+**Version**: 0.1.0 | **Ratified**: 2026-05-10 | **Last Amended**: 2026-05-10

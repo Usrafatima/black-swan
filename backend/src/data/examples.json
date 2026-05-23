@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Standard Web Stack",
+        "description": "Next.js frontend with FastAPI backend and PostgreSQL database."
+    },
+    {
+        "name": "AI Search Engine",
+        "description": "React app connecting to a Python API with Qdrant vector database and Redis cache."
+    },
+    {
+        "name": "E-commerce Microservices",
+        "description": "Next.js frontend, Node.js API, MongoDB database, and RabbitMQ message queue."
+    }
+]
