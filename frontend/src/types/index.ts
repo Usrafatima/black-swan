@@ -27,8 +27,14 @@ export interface Risk {
 export interface AnalysisResult {
   id: string;
   name?: string;
-  score?: string;
+  industry?: string;
+  architecture_type?: string;
+  description?: string;
+  score?: string | number;
   confidence?: string;
+  display_title?: string;
+  industry_label?: string;
+  score_formatted?: string;
   nodes: Node[];
   edges: Edge[];
   risks: Risk[];
@@ -44,7 +50,26 @@ export interface AnalysisResult {
 }
 
 export interface SimulationResult {
+  failure_type?: string;
+  trigger_event?: string;
+  cascade_flow?: string[];
+  impacted_services?: string[];
   failed_nodes: string[];
-  bottlenecks: string[];
-  failure_propagation: Record<string, any>[];
+  metrics?: {
+    latency_increase: string;
+    throughput_drop: string;
+    survivability_change: string;
+    blast_radius: string;
+  };
+  severity?: string;
+  recovery_estimate?: string;
+  mitigation_strategies?: string[];
+  visualization_hint?: {
+    pattern: string;
+    root_cause: string[];
+    propagation_direction: string;
+  };
+  survivability?: number;
+  status?: string;
+  story?: any;
 }

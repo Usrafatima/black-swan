@@ -14,10 +14,18 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import ServiceNode from './nodes/ServiceNode';
 
+interface GraphCanvasProps {
+  nodes: FlowNode[];
+  edges: FlowEdge[];
+  isTransforming: boolean;
+}
+
 const GraphCanvas = ({ nodes, edges, isTransforming }: GraphCanvasProps) => {
   const nodeTypes = React.useMemo(() => ({
     serviceNode: ServiceNode,
   }), []);
+
+  const edgeTypes = React.useMemo(() => ({}), []);
 
   const [log, setLog] = React.useState<string[]>([]);
   const transformationSteps = [
@@ -45,6 +53,7 @@ const GraphCanvas = ({ nodes, edges, isTransforming }: GraphCanvasProps) => {
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         fitView
         className="bg-black"
       >

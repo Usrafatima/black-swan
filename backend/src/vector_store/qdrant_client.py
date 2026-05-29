@@ -42,6 +42,16 @@ class VectorStore:
                     collection_name=self.collection_name,
                     vectors_config=VectorParams(size=3072, distance=Distance.COSINE),
                 )
+                
+                # Create index for filtering
+                from qdrant_client.http.models import PayloadSchemaType
+                await self.client.create_payload_index(
+                    collection_name=self.collection_name,
+                    field_name="type",
+                    field_schema=PayloadSchemaType.KEYWORD,
+                )
+                print(f"✅ Created payload index for 'type'")
+                
             print(f"✅ Qdrant connection verified. Collection '{self.collection_name}' is ready.")
         except Exception as e:
             print(f"❌ FATAL: Could not connect to Qdrant. Vector search will FAIL.")

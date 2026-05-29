@@ -19,12 +19,15 @@ class SimulateRequest(BaseModel):
 async def simulate_failure(request: SimulateRequest):
     sim_result = await simulator.simulate_failure(request.nodes, request.edges, request.load_scenario)
     
-    # Generate narrative story with real simulation metrics
+    # Generate narrative story with the full simulation context
     narrative = await explainer.generate_narrative({
         "traffic": request.load_scenario,
         "failed_nodes": sim_result["failed_nodes"],
-        "blast_radius": sim_result.get("blast_radius", 0),
-        "survivability": sim_result.get("survivability", 100)
+        "metrics": sim_result["metrics"],
+        "failure_type": sim_result["failure_type"],
+        "severity": sim_result["severity"],
+        "trigger": sim_result["trigger_event"],
+        "survivability": sim_result["survivability"]
     })
     
     return {

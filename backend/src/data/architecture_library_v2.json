@@ -1,0 +1,652 @@
+[
+  {
+    "name": "High-Frequency Algorithmic Dark Pool Core",
+    "industry": "Fintech",
+    "architecture_type": "HPC / Low-Latency",
+    "description": "A specialized trading execution engine designed for dark pool liquidity matching. It utilizes kernel bypass networking and FPGA-accelerated matching logic to minimize tick-to-trade latency. The system maintains a deterministic execution order and provides high-resolution audit logging for regulatory compliance.",
+    "key_technologies": [
+      "C++",
+      "FPGA",
+      "Solarflare",
+      "Aerospike"
+    ],
+    "id": "302f6c7c-f8f6-4a6c-9a94-848daa1b070a"
+  },
+  {
+    "name": "Global Supply Chain Resiliency Twin",
+    "industry": "Logistics",
+    "architecture_type": "Graph-Driven Digital Twin",
+    "description": "A digital twin architecture that models global logistics networks as a dynamic graph. It ingests real-time shipping telemetry and uses graph traversal algorithms to identify potential bottlenecks and simulate cascading failure scenarios across multi-modal transport routes.",
+    "key_technologies": [
+      "Neo4j",
+      "Apache Flink",
+      "Azure IoT Hub",
+      "Kafka"
+    ],
+    "id": "00abb6fe-b94b-40b8-b31b-1f10a1c14383"
+  },
+  {
+    "name": "Federated Patient Health Record Exchange",
+    "industry": "Healthcare",
+    "architecture_type": "Decentralized Zero-Trust Mesh",
+    "description": "A privacy-first health data exchange platform using federated identity and zero-knowledge proofs. It allows hospitals to share patient records securely without centralizing sensitive data, ensuring HIPAA compliance through distributed ledger auditing and fine-grained attribute-based access control.",
+    "key_technologies": [
+      "Hyperledger Fabric",
+      "HashiCorp Vault",
+      "mTLS",
+      "OPA"
+    ],
+    "id": "4159f769-5c45-456f-bcee-20a49c5bcac6"
+  },
+  {
+    "name": "Sub-Millisecond RTB Header Bidding Grid",
+    "industry": "AdTech",
+    "architecture_type": "Distributed Real-Time Bidding",
+    "description": "An ultra-low latency ad exchange bidding system capable of processing millions of requests per second. It uses an in-memory data grid for user profile lookups and a geo-distributed Go-based worker pool to guarantee bid responses within a 50ms total round-trip window.",
+    "key_technologies": [
+      "Go",
+      "Redis",
+      "Netty",
+      "ClickHouse"
+    ],
+    "id": "6e735758-28d3-4eea-ad8d-7a24a2e7c64d"
+  },
+  {
+    "name": "Autonomous Drone Swarm Command Mesh",
+    "industry": "Logistics",
+    "architecture_type": "Edge Decentralized Mesh",
+    "description": "A decentralized command and control architecture for autonomous drone swarms. It utilizes a peer-to-peer mesh network for local obstacle avoidance and coordination, while a hierarchical edge gateway manages mission-level objectives and long-range telemetry backhaul.",
+    "key_technologies": [
+      "ROS 2",
+      "DDS",
+      "MQTT",
+      "NVIDIA Jetson"
+    ],
+    "id": "37e20803-34ba-4c36-86ce-e1435c981dfd"
+  },
+  {
+    "name": "Predictive Seismic Data Processing Farm",
+    "industry": "Energy",
+    "architecture_type": "HPC Batch Processing",
+    "description": "A high-performance computing cluster dedicated to processing petabytes of raw seismic telemetry. It uses a DAG-based workflow engine to coordinate complex geo-physical simulations and leverages a distributed parallel file system for high-throughput I/O during 3D sub-surface modeling.",
+    "key_technologies": [
+      "Slurm",
+      "Lustre",
+      "CUDA",
+      "Python"
+    ],
+    "id": "8aeb8a30-88e2-441a-9bc7-69ac6dd6a742"
+  },
+  {
+    "name": "Global Content Distribution Purge Mesh",
+    "industry": "Streaming",
+    "architecture_type": "Anycast Edge Control Plane",
+    "description": "A specialized control plane for global CDN cache invalidation. It uses an Anycast-routed event bus to propagate purge requests to thousands of edge POPs in under 200ms, ensuring immediate global consistency for dynamic content updates and security revocations.",
+    "key_technologies": [
+      "Fastly",
+      "BGP Anycast",
+      "Nats.io",
+      "Rust"
+    ],
+    "id": "6b681fee-bf69-4bb3-987d-e7ab86329884"
+  },
+  {
+    "name": "Multi-Tenant Legal Discovery Lakehouse",
+    "industry": "LegalTech",
+    "architecture_type": "SaaS Data Lakehouse",
+    "description": "A secure, multi-tenant analytics platform for electronic discovery. It combines the performance of a data warehouse with the scale of a data lake, featuring per-tenant encryption keys, automated OCR pipelines, and semantic search capabilities over millions of legal documents.",
+    "key_technologies": [
+      "Snowflake",
+      "dbt",
+      "Elasticsearch",
+      "AWS KMS"
+    ],
+    "id": "177862ce-e797-43c1-9588-909f742febd7"
+  },
+  {
+    "name": "Real-Time Sports Betting Odds Engine",
+    "industry": "Gaming",
+    "architecture_type": "Complex Event Processing (CEP)",
+    "description": "A high-throughput odds calculation engine that ingests live sports data feeds. It uses stateful stream processing to update betting lines in real-time based on game events and market volume, ensuring zero-arbitrage opportunities across global sportsbooks.",
+    "key_technologies": [
+      "Apache Storm",
+      "Kafka",
+      "Java",
+      "RocksDB"
+    ],
+    "id": "a0471568-a588-4b18-abb9-2970101a61ef"
+  },
+  {
+    "name": "Smart City Emergency Response Orchestrator",
+    "industry": "Public Sector",
+    "architecture_type": "Hybrid Real-Time Orchestration",
+    "description": "An integrated emergency dispatch architecture that unifies 911 calls, CCTV feeds, and IoT sensor data. It uses AI-driven triage to prioritize incidents and dynamically routes emergency vehicles based on real-time traffic conditions and hospital capacity.",
+    "key_technologies": [
+      "Kubernetes",
+      "PostGIS",
+      "TensorFlow",
+      "RabbitMQ"
+    ],
+    "id": "6b304a86-8d1d-4f8d-b428-8e6d998d3ac3"
+  },
+  {
+    "name": "Genomic Alignment & Variant Analysis Grid",
+    "industry": "BioTech",
+    "architecture_type": "Distributed Shared-Memory HPC",
+    "description": "A specialized grid for large-scale genomic sequencing. It leverages a distributed shared-memory fabric to allow massive DNA alignment jobs to span multiple compute nodes without disk I/O bottlenecks, significantly accelerating the identification of genetic variants.",
+    "key_technologies": [
+      "Spark",
+      "HDFS",
+      "C++",
+      "MPI"
+    ],
+    "id": "d52a7683-f773-4a93-9ed2-f62d74e47d76"
+  },
+  {
+    "name": "Zero-Knowledge Identity Verification Vault",
+    "industry": "Security",
+    "architecture_type": "Cryptographic Identity Vault",
+    "description": "A secure identity verification system that allows users to prove attributes (e.g., age, residency) without revealing underlying PII. It utilizes zero-knowledge proofs (ZKP) and secure enclaves to process sensitive documents while maintaining a verifiable audit trail on a private ledger.",
+    "key_technologies": [
+      "Circom",
+      "Intel SGX",
+      "Ethereum",
+      "Rust"
+    ],
+    "id": "95ee6b56-e006-4356-8448-e23f072774ad"
+  },
+  {
+    "name": "Precision Viticulture Irrigation Mesh",
+    "industry": "Agriculture",
+    "architecture_type": "IoT Edge / LoRaWAN",
+    "description": "An offline-resilient IoT mesh for precision agriculture. Soil moisture and local weather data are collected via LoRaWAN and processed at a solar-powered edge gateway to automate irrigation cycles, with data synced to the cloud via satellite when available.",
+    "key_technologies": [
+      "LoRaWAN",
+      "InfluxDB",
+      "Python",
+      "SQLite"
+    ],
+    "id": "9fed49d5-c59f-4379-926e-309f11311749"
+  },
+  {
+    "name": "Interactive Immersive VR Concert Backplane",
+    "industry": "Communication",
+    "architecture_type": "UDP Spatial Sync",
+    "description": "A high-concurrency spatial synchronization engine for virtual reality events. It uses a custom UDP protocol and interest management algorithms to synchronize thousands of avatar positions and interactions with sub-50ms latency in a shared 3D environment.",
+    "key_technologies": [
+      "Agones",
+      "UDP",
+      "Go",
+      "Redis"
+    ],
+    "id": "df266c3e-785b-44d2-b281-283567440a85"
+  },
+  {
+    "name": "Omnichannel Loyalty Transaction Ledger",
+    "industry": "E-commerce",
+    "architecture_type": "Event Sourcing / CQRS",
+    "description": "A highly consistent transaction ledger for global retail loyalty programs. It uses event sourcing to maintain an immutable history of point accruals and redemptions, with CQRS-based read models optimized for real-time mobile app dashboards and checkout integration.",
+    "key_technologies": [
+      "EventStoreDB",
+      "PostgreSQL",
+      "Kafka",
+      "Node.js"
+    ],
+    "id": "928cf35d-d5b7-402a-a77e-497bbd4f2e4a"
+  },
+  {
+    "name": "AI-Driven Adaptive Malware Sandbox",
+    "industry": "Security",
+    "architecture_type": "AI-Instrumented Sandboxing",
+    "description": "An automated malware analysis pipeline that detonates suspicious files in isolated virtual environments. It uses machine learning to detect evasive behaviors in real-time and automatically scales sandboxing resources based on threat intelligence volume.",
+    "key_technologies": [
+      "Cuckoo Sandbox",
+      "KVM",
+      "PyTorch",
+      "Elasticsearch"
+    ],
+    "id": "43ae6592-b675-48bc-b419-108aba002d64"
+  },
+  {
+    "name": "Multi-Region SaaS Subscription Billing Core",
+    "industry": "SaaS",
+    "architecture_type": "Microservices Consistency Mesh",
+    "description": "A mission-critical billing engine for global SaaS platforms. It handles complex subscription lifecycles, tax compliance across 100+ countries, and dunning workflows, utilizing distributed transactions and idempotent processing to ensure zero-error financial reporting.",
+    "key_technologies": [
+      "Java Spring",
+      "CockroachDB",
+      "Temporal",
+      "Stripe API"
+    ],
+    "id": "f8f458a6-07ac-4869-95ed-5df1dcc3d5c5"
+  },
+  {
+    "name": "Real-Time Urban Air Quality Monitoring Grid",
+    "industry": "Public Sector",
+    "architecture_type": "Stream Processing Edge",
+    "description": "A city-wide environmental monitoring system that ingests data from thousands of low-cost air quality sensors. It uses stream processing to generate real-time heatmaps of pollution levels and triggers public health alerts when thresholds are exceeded.",
+    "key_technologies": [
+      "Apache Flink",
+      "MQTT",
+      "Grafana",
+      "TimescaleDB"
+    ],
+    "id": "3a26c70c-4b9f-454c-938f-62bd2d9bb754"
+  },
+  {
+    "name": "Decentralized P2P Energy Trading Exchange",
+    "industry": "Energy",
+    "architecture_type": "Blockchain Smart Contracts",
+    "description": "A decentralized platform for peer-to-peer energy trading between prosumers with solar panels and local consumers. It uses smart contracts on a private EVM-compatible chain to automate energy settlements and balance local microgrid load in real-time.",
+    "key_technologies": [
+      "Solidity",
+      "Quorum",
+      "IoT Edge",
+      "Web3.js"
+    ],
+    "id": "4cd8933f-12c3-409a-b4ed-da27be5edbe2"
+  },
+  {
+    "name": "Automated KYC/AML Risk Scoring Pipeline",
+    "industry": "Fintech",
+    "architecture_type": "AI-Driven Workflow Orchestration",
+    "description": "An automated compliance pipeline for customer onboarding. It integrates with global identity databases and uses NLP-based sanction screening and behavioral risk modeling to assign real-time AML scores, reducing manual review time by 80%.",
+    "key_technologies": [
+      "Camunda",
+      "Python",
+      "MongoDB",
+      "Elasticsearch"
+    ],
+    "id": "65cd572f-e317-4e0a-9293-2cca1e2bfc52"
+  },
+  {
+    "name": "High-Concurrency Flash Sale Inventory Shard",
+    "industry": "E-commerce",
+    "architecture_type": "Distributed Lock Management",
+    "description": "A specialized inventory management engine designed for high-velocity flash sales. It utilizes per-product memory sharding and distributed locks to prevent over-selling during extreme traffic spikes, while maintaining sub-10ms latency for inventory checks.",
+    "key_technologies": [
+      "Redis Redlock",
+      "Go",
+      "Cassandra",
+      "Kafka"
+    ],
+    "id": "bf9212b1-79ae-43c0-a2e9-2c489efd94db"
+  },
+  {
+    "name": "Remote Robotic Surgery Telepresence Link",
+    "industry": "Healthcare",
+    "architecture_type": "Critical-Path Low-Latency",
+    "description": "An ultra-reliable communication stack for remote robotic surgery. It features dual-path redundancy with hardware-level failover and custom congestion control algorithms to guarantee zero-packet-loss and sub-20ms haptic and video feedback over dedicated fiber.",
+    "key_technologies": [
+      "RTOS",
+      "C",
+      "Dedicated Fiber",
+      "5G Slicing"
+    ],
+    "id": "4f7c5d38-0f0c-4094-be02-0f365bc714c3"
+  },
+  {
+    "name": "Dynamic Content Personalization Graph",
+    "industry": "SaaS",
+    "architecture_type": "Real-Time Graph Analytics",
+    "description": "A personalization engine that maps user behavior and content relationships in a real-time graph. It uses online graph embeddings to generate hyper-relevant recommendations on every page load, adapting to user intent in milliseconds.",
+    "key_technologies": [
+      "ArangoDB",
+      "Python",
+      "TensorFlow Serving",
+      "Redis"
+    ],
+    "id": "b31e197b-9023-4e38-a21d-0362aa468b60"
+  },
+  {
+    "name": "Satellite Constellation Telemetry Gateway",
+    "industry": "IoT",
+    "architecture_type": "Tiered Cloud-Edge Gateway",
+    "description": "A telemetry processing pipeline for LEO satellite constellations. It performs initial anomaly detection and data compression at ground stations before backhauling mission-critical data to a central cloud for long-term orbital mechanics analysis.",
+    "key_technologies": [
+      "Rust",
+      "QUIC",
+      "TimescaleDB",
+      "Kubernetes"
+    ],
+    "id": "3962dd91-f2b9-4310-b5ce-0366f3821668"
+  },
+  {
+    "name": "Distributed LLM Fine-Tuning Cluster",
+    "industry": "AI/ML",
+    "architecture_type": "GPU Cluster Orchestration",
+    "description": "A high-performance training cluster for large language model fine-tuning. It utilizes a RDMA-enabled network fabric and automated checkpointing to allow massive training jobs to scale across hundreds of GPUs with minimal synchronization overhead.",
+    "key_technologies": [
+      "Ray",
+      "PyTorch",
+      "InfiniBand",
+      "S3"
+    ],
+    "id": "42a94cdf-29cd-4caf-aab8-8d1776ba605a"
+  },
+  {
+    "name": "Enterprise Resource Planning Modernization Mesh",
+    "industry": "Enterprise",
+    "architecture_type": "Strangler Fig / Sidecar Mesh",
+    "description": "An architecture for incremental modernization of legacy ERP systems. It uses a service mesh sidecar to intercept legacy traffic and route it to modern microservices, enabling a zero-downtime transition from monolithic architecture to a cloud-native model.",
+    "key_technologies": [
+      "Istio",
+      "Java",
+      "PostgreSQL",
+      "Azure Service Bus"
+    ],
+    "id": "e43cb384-1131-44f7-ad2b-b5ba0247180a"
+  },
+  {
+    "name": "Global VoIP SIP Signaling Edge",
+    "industry": "Communication",
+    "architecture_type": "Anycast SIP Mesh",
+    "description": "A distributed SIP signaling layer for global VoIP providers. It uses Anycast routing to direct registration and call setup requests to the nearest regional gateway, minimizing call setup time and maximizing resiliency against regional outages.",
+    "key_technologies": [
+      "Kamailio",
+      "Anycast",
+      "Redis",
+      "Go"
+    ],
+    "id": "cb8a62ba-f7e3-443e-b96e-3bd569fcb3ea"
+  },
+  {
+    "name": "Smart Warehouse Robotic Picking Coordinator",
+    "industry": "Logistics",
+    "architecture_type": "Local 5G / ROS2 Control",
+    "description": "A low-latency control system for autonomous mobile robots (AMR) in large fulfillment centers. It utilizes a private 5G network for reliable communication and a centralized planning engine to optimize pick paths and prevent robot collisions in real-time.",
+    "key_technologies": [
+      "ROS 2",
+      "MQTT",
+      "C++",
+      "NVIDIA Isaac"
+    ],
+    "id": "d18df6df-8b9a-423f-acb8-286e89e9eab6"
+  },
+  {
+    "name": "Cross-Chain Asset Liquidity Bridge",
+    "industry": "Fintech",
+    "architecture_type": "Multi-Party Consensus Bridge",
+    "description": "A secure bridge for transferring assets between disparate blockchain networks. It uses multi-party computation (MPC) and a decentralized relayer set to verify cross-chain transactions, ensuring asset safety without relying on a single trusted entity.",
+    "key_technologies": [
+      "Threshold Signature Scheme",
+      "Solidity",
+      "Go",
+      "Cosmos SDK"
+    ],
+    "id": "bb8508ed-5b69-4548-8617-79a6821726ae"
+  },
+  {
+    "name": "Collaborative Real-Time Code IDE Backend",
+    "industry": "SaaS",
+    "architecture_type": "CRDT / WebSocket Sync",
+    "description": "A backend for high-concurrency collaborative code editing. It uses Conflict-free Replicated Data Types (CRDTs) to handle concurrent edits from multiple developers and a WebSocket mesh to synchronize document state with sub-100ms latency.",
+    "key_technologies": [
+      "Yjs",
+      "Elixir Phoenix",
+      "Redis",
+      "Docker"
+    ],
+    "id": "36e2d076-8efc-424a-851f-656fbde92cdc"
+  },
+  {
+    "name": "Fraud Detection Behavioral Embedding Mesh",
+    "industry": "Fintech",
+    "architecture_type": "Vector Search / AI Mesh",
+    "description": "A real-time fraud detection system that maps transaction behavior into a high-dimensional vector space. It compares incoming transactions against historical 'normal' embeddings and known fraud patterns using a vector database for millisecond-latency anomaly detection.",
+    "key_technologies": [
+      "Qdrant",
+      "Python",
+      "Scikit-learn",
+      "Kafka"
+    ],
+    "id": "98122cf1-fe57-4976-8dfb-2eee002a23d8"
+  },
+  {
+    "name": "Multi-Stage 8K Video Transcoding Pipeline",
+    "industry": "Streaming",
+    "architecture_type": "Serverless Parallel Pipeline",
+    "description": "An automated media processing pipeline that shards raw 8K video into thousands of small chunks for parallel transcoding. It utilizes serverless functions for elastic scaling and a centralized metadata store to track fragment assembly and quality assurance.",
+    "key_technologies": [
+      "AWS Lambda",
+      "FFmpeg",
+      "S3",
+      "Step Functions"
+    ],
+    "id": "e1cdad9b-20f4-4f52-8e4e-30d88ace636d"
+  },
+  {
+    "name": "Smart Building Occupancy & HVAC Optimizer",
+    "industry": "Enterprise",
+    "architecture_type": "Digital Twin / IoT Graph",
+    "description": "A smart building management system that integrates occupancy sensors and HVAC controls. It uses a spatial graph to model room relationships and airflow, optimizing energy consumption in real-time based on actual building usage patterns.",
+    "key_technologies": [
+      "Azure Digital Twins",
+      "CosmosDB",
+      "React",
+      "MQTT"
+    ],
+    "id": "4b2adad7-b36e-4d8c-8904-de16fcf8726b"
+  },
+  {
+    "name": "Automated Insurance Claims Adjuster",
+    "industry": "Enterprise",
+    "architecture_type": "AI-Workflow / OCR Pipeline",
+    "description": "An AI-driven claims processing system that uses computer vision to assess vehicle damage from photos and NLP to extract data from police reports. It automates the initial claim validation and routes complex cases to human adjusters.",
+    "key_technologies": [
+      "PyTorch",
+      "AWS Textract",
+      "Java Spring",
+      "PostgreSQL"
+    ],
+    "id": "803d33d7-9321-4657-8a2c-2834050a553a"
+  },
+  {
+    "name": "Global Fleet Telematics & Safety Grid",
+    "industry": "Logistics",
+    "architecture_type": "Geo-Partitioned Stream Processing",
+    "description": "A real-time telematics platform for global vehicle fleets. It utilizes geo-partitioned ingestion hubs to minimize latency and a unified stream processing layer to monitor driver safety, fuel efficiency, and maintenance alerts across millions of vehicles.",
+    "key_technologies": [
+      "Apache Pulsar",
+      "Flink",
+      "PostGIS",
+      "Go"
+    ],
+    "id": "5c0bc309-7aa1-44f4-a2ea-d6f27417c954"
+  },
+  {
+    "name": "Decentralized Social Media Protocol Node",
+    "industry": "Communication",
+    "architecture_type": "P2P Content-Addressable Mesh",
+    "description": "A decentralized backend for social media that uses content-addressable storage for user posts and a gossip protocol for feed distribution. It allows users to own their data and move between different client implementations without losing their social graph.",
+    "key_technologies": [
+      "IPFS",
+      "libp2p",
+      "Rust",
+      "SQLite"
+    ],
+    "id": "e6e0ccbc-cac5-421b-bcaf-4d3fd21b57af"
+  },
+  {
+    "name": "Precision Medicine Genomic Search Engine",
+    "industry": "Healthcare",
+    "architecture_type": "Vector Search / Bioinformatics",
+    "description": "A search engine for genomic data that uses high-dimensional embeddings to find similar genetic profiles and clinical outcomes. It enables researchers to identify patient cohorts for clinical trials based on complex multi-omic data patterns.",
+    "key_technologies": [
+      "Qdrant",
+      "Python",
+      "Nextflow",
+      "BigQuery"
+    ],
+    "id": "ff98fbf4-1ac7-4929-90c8-fd6e31d24eb7"
+  },
+  {
+    "name": "Real-Time Ad Fraud Mitigation Filter",
+    "industry": "AdTech",
+    "architecture_type": "Low-Latency Stream Filter",
+    "description": "An edge-based security layer for ad exchanges that detects and blocks bot traffic in real-time. It uses a combination of fingerprinting and behavioral analysis to filter out fraudulent ad requests before they reach the bidding engine.",
+    "key_technologies": [
+      "Lua / OpenResty",
+      "Redis",
+      "Python",
+      "Kafka"
+    ],
+    "id": "7c16c908-2cf2-41f4-b547-25081c808cb4"
+  },
+  {
+    "name": "High-Performance Portfolio Risk Simulator",
+    "industry": "Fintech",
+    "architecture_type": "Monte Carlo / HPC Cluster",
+    "description": "A massive-scale risk simulation engine for institutional portfolios. It uses Monte Carlo methods across a high-performance compute cluster to calculate Value-at-Risk (VaR) and Expected Shortfall under thousands of market stress scenarios.",
+    "key_technologies": [
+      "C++",
+      "CUDA",
+      "Slurm",
+      "Python"
+    ],
+    "id": "565a0d65-c31f-4ef9-a9e9-e24502e6f342"
+  },
+  {
+    "name": "Cloud-Native Core Banking Ledger",
+    "industry": "Fintech",
+    "architecture_type": "Microservices / Immutable Ledger",
+    "description": "A modern core banking system built on a microservices architecture. It uses an immutable ledger for all financial transactions and a distributed actor model to handle high-concurrency account operations while ensuring strict ACID compliance.",
+    "key_technologies": [
+      "Akka",
+      "Cassandra",
+      "Kafka",
+      "Kubernetes"
+    ],
+    "id": "180dcda5-84d6-4274-9e6d-aa56e1d52f65"
+  },
+  {
+    "name": "Interactive EdTech Adaptive Testing Grid",
+    "industry": "EdTech",
+    "architecture_type": "AI-Driven Serverless Grid",
+    "description": "An adaptive testing platform that dynamically adjusts question difficulty based on student performance in real-time. It uses serverless functions to evaluate responses and update the student's knowledge model, providing personalized learning paths at scale.",
+    "key_technologies": [
+      "AWS Lambda",
+      "DynamoDB",
+      "Python",
+      "React"
+    ],
+    "id": "b970c3c1-03fb-4bf0-b470-b2351ab91b0d"
+  },
+  {
+    "name": "Industrial IoT Predictive Maintenance Hub",
+    "industry": "IoT",
+    "architecture_type": "Edge AI / Predictive Analytics",
+    "description": "A predictive maintenance system for manufacturing plants. It uses edge-based machine learning models to analyze vibration and temperature data from industrial machinery, predicting potential failures and scheduling maintenance before downtime occurs.",
+    "key_technologies": [
+      "Azure IoT Edge",
+      "TensorFlow Lite",
+      "InfluxDB",
+      "Grafana"
+    ],
+    "id": "baf53769-3d29-4290-818a-021980b97288"
+  },
+  {
+    "name": "Global Newsroom Wire Service Backbone",
+    "industry": "Communication",
+    "architecture_type": "Hybrid / CDN-Optimized",
+    "description": "A high-availability content management and distribution system for global news organizations. It uses a tiered caching strategy and automated static site generation to handle extreme traffic spikes during major world events without service degradation.",
+    "key_technologies": [
+      "Next.js",
+      "Contentful",
+      "Fastly",
+      "S3"
+    ],
+    "id": "33556240-47ed-4904-9cfe-f9ae92547e2e"
+  },
+  {
+    "name": "Smart Grid Frequency Regulation Controller",
+    "industry": "Energy",
+    "architecture_type": "Real-Time Control Loop",
+    "description": "A high-speed control system for stabilizing power grid frequency. It monitors grid metrics in real-time and orchestrates industrial-scale battery storage systems to inject or absorb power, maintaining grid stability with millisecond response times.",
+    "key_technologies": [
+      "C++",
+      "MQTT",
+      "RTOS",
+      "PostgreSQL"
+    ],
+    "id": "60b901f1-c205-4da6-a63f-6945454b517f"
+  },
+  {
+    "name": "Large-Scale Scientific Simulation Data Lake",
+    "industry": "Public Sector",
+    "architecture_type": "HPC / Object-Storage Lake",
+    "description": "A massive data repository for scientific research. It unifies output from diverse HPC simulations into a central object store with a rich metadata catalog, enabling cross-disciplinary data discovery and long-term archival for academic institutions.",
+    "key_technologies": [
+      "S3",
+      "MinIO",
+      "Elasticsearch",
+      "Python"
+    ],
+    "id": "a6f3e71c-34f1-41b8-b777-db5d9d4e2c54"
+  },
+  {
+    "name": "Retail Store-of-the-Future Experience Mesh",
+    "industry": "E-commerce",
+    "architecture_type": "Edge / Computer Vision Mesh",
+    "description": "An in-store retail system that unifies computer vision, shelf sensors, and mobile apps. it enables checkout-free shopping and real-time inventory tracking by processing video feeds at the store edge to track customer-item interactions.",
+    "key_technologies": [
+      "NVIDIA DeepStream",
+      "Kubernetes Edge",
+      "Redis",
+      "React Native"
+    ],
+    "id": "30e9696a-ab2a-4c90-b435-9202ccde3008"
+  },
+  {
+    "name": "Secure Multi-Party Computation Analytics",
+    "industry": "Security",
+    "architecture_type": "MPC / Distributed Privacy",
+    "description": "A privacy-preserving analytics platform that allows multiple organizations to compute joint statistics on their data without revealing individual records. It uses secure multi-party computation protocols to ensure data privacy throughout the analysis process.",
+    "key_technologies": [
+      "MP-SPDZ",
+      "Rust",
+      "Docker",
+      "Python"
+    ],
+    "id": "148c81e4-95dc-4e8e-a1ca-738a082f719f"
+  },
+  {
+    "name": "Global Talent Marketplace Matching Engine",
+    "industry": "SaaS",
+    "architecture_type": "Vector Search / Graph Analytics",
+    "description": "A high-scale matching engine for talent marketplaces. It uses vector embeddings to represent skills and job requirements, combined with a social graph to provide hyper-relevant job recommendations and candidate discovery for global enterprises.",
+    "key_technologies": [
+      "Qdrant",
+      "Neo4j",
+      "Python",
+      "FastAPI"
+    ],
+    "id": "6bc2b022-d41e-4483-8ddd-0d6b553e9b54"
+  },
+  {
+    "name": "Intelligent Traffic Signal Optimization Grid",
+    "industry": "Public Sector",
+    "architecture_type": "Edge / AI Orchestration",
+    "description": "An AI-driven traffic management system that optimizes signal timings in real-time. It processes video feeds from intersections at the edge to detect vehicle and pedestrian counts, using a decentralized coordination algorithm to reduce city-wide congestion.",
+    "key_technologies": [
+      "PyTorch",
+      "MQTT",
+      "Go",
+      "Kubernetes"
+    ],
+    "id": "bf2c2f56-1c55-4aea-abe5-3631ee10e98b"
+  },
+  {
+    "name": "High-Fidelity Digital Twin for Manufacturing",
+    "industry": "Enterprise",
+    "architecture_type": "IoT / Real-Time Digital Twin",
+    "description": "A real-time digital replica of complex manufacturing lines. It integrates sensor data from CNC machines and assembly robots to simulate production flow, predict maintenance needs, and optimize factory throughput using a high-fidelity 3D physics engine.",
+    "key_technologies": [
+      "Unity",
+      "Azure IoT Hub",
+      "CosmosDB",
+      "C#"
+    ],
+    "id": "be97b546-341e-47b6-8fb6-ece3a4d15d7e"
+  }
+]

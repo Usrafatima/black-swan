@@ -79,10 +79,10 @@ async def analyze_architecture(request: AnalyzeRequest):
             risk['id'] = str(risk['id'])
         
         # Add additional searchable fields to payload
+        payload['type'] = 'user_analysis' # Distinguish from vetted library
         payload['name'] = f"Analyzed_Topology_{str(result.id)[:8]}"
-        payload['description'] = request.text
-        payload['survivability'] = scores.get('fault_tolerance', 0)
-        payload['complexity'] = scores.get('operational_complexity', 0)
+        payload['industry'] = metadata.get('industry', 'General')
+        payload['architecture_type'] = metadata.get('archetype', 'Architecture Pattern')
 
         await v_store.upsert_architecture(
             arch_id=str(result.id),

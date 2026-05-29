@@ -34,16 +34,31 @@ const SimilarityPanel = ({ results, onSelect, isLoading }: SimilarityPanelProps)
             >
               <div className="flex items-center justify-between w-full">
                 <div className="relative z-10 flex flex-col gap-1">
-                  <div className="text-[12px] font-bold uppercase tracking-tight text-white group-hover:text-blue-400 transition-colors">Topology_Match_#0{i + 1}: {res.name}</div>
-                  <div className="flex items-center gap-3 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-                    <Target size={10} className="text-blue-900" />
-                    Match: <span className="text-blue-500 font-bold">
-                      {res.score ? `${(parseFloat(res.score) * 100).toFixed(1)}%` : `${((0.98 - i * 0.04) * 100).toFixed(1)}%`}
-                    </span>
+                  <div className="text-[12px] font-bold uppercase tracking-tight text-white group-hover:text-blue-400 transition-colors">
+                    {res.display_title || `Topology Match #${i + 1}: ${res.name}`}
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                      <Target size={10} className="text-blue-900" />
+                      <span className="text-blue-500 font-bold">
+                        {res.score_formatted || (res.score ? `${(parseFloat(res.score) * 100).toFixed(1)}% Match` : `${((0.98 - i * 0.04) * 100).toFixed(1)}% Match`)}
+                      </span>
+                    </div>
+                    {(res.industry_label || res.industry) && (
+                      <div className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-[8px] font-mono text-slate-400 uppercase">
+                        {res.industry_label || res.industry}
+                      </div>
+                    )}
                   </div>
                 </div>
                 <ChevronRight size={16} className="text-slate-600 group-hover:text-blue-500 group-hover:translate-x-1 transition-all relative z-10" />
               </div>
+              
+              {res.technical_explanation && (
+                <div className="text-[9px] font-mono text-slate-500 uppercase tracking-tighter opacity-60 group-hover:opacity-100 transition-opacity line-clamp-1">
+                   {res.technical_explanation}
+                </div>
+              )}
             </button>
           ))
         )}

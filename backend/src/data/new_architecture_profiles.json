@@ -1,0 +1,467 @@
+[
+  {
+    "name": "Global Multi-Region Financial Ledger",
+    "category": "High-Availability",
+    "industry": "Fintech",
+    "survivability": 99,
+    "complexity": 92,
+    "description": "A strictly consistent, distributed ledger system designed for cross-border financial transactions. It utilizes a leader-based consensus algorithm across multiple geographic regions to ensure data integrity while providing low-latency local reads.",
+    "metadata": {
+      "archetype": "global-distributed-ledger",
+      "fault_tolerance": 10,
+      "scalability": 9,
+      "security_level": "Highest (E2E Encrypted)",
+      "operational_cost": "Premium",
+      "traffic_capacity": "500k TPS (Global)",
+      "failover_strategy": "Consensus-based Automatic Leader Re-election",
+      "primary_stack": {
+        "database": "CockroachDB",
+        "messaging": "Kafka",
+        "caching": "Redis (Local Read-Mirror)"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "g-accel", "label": "AWS Global Accelerator", "type": "gateway" },
+        { "id": "api-us", "label": "API (US-East)", "type": "backend" },
+        { "id": "api-eu", "label": "API (EU-West)", "type": "backend" },
+        { "id": "api-ap", "label": "API (AP-South)", "type": "backend" },
+        { "id": "cdb-1", "label": "CockroachDB Node 1", "type": "database" },
+        { "id": "cdb-2", "label": "CockroachDB Node 2", "type": "database" },
+        { "id": "cdb-3", "label": "CockroachDB Node 3", "type": "database" },
+        { "id": "kafka", "label": "Event Bus (Kafka)", "type": "other" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "g-accel", "target": "api-us" },
+        { "id": "e2", "source": "g-accel", "target": "api-eu" },
+        { "id": "e3", "source": "g-accel", "target": "api-ap" },
+        { "id": "e4", "source": "api-us", "target": "cdb-1" },
+        { "id": "e5", "source": "api-eu", "target": "cdb-2" },
+        { "id": "e6", "source": "api-ap", "target": "cdb-3" },
+        { "id": "e7", "source": "cdb-1", "target": "kafka" },
+        { "id": "e8", "source": "cdb-2", "target": "kafka" },
+        { "id": "e9", "source": "cdb-3", "target": "kafka" }
+      ]
+    }
+  },
+  {
+    "name": "Flash-Sale Resilient Retail Grid",
+    "category": "Scalability",
+    "industry": "E-commerce",
+    "survivability": 94,
+    "complexity": 70,
+    "description": "An event-driven architecture optimized for extreme traffic spikes. It decouples order ingestion from processing using high-throughput queues and 'virtual waiting room' patterns.",
+    "metadata": {
+      "archetype": "event-driven-spike-resilient",
+      "fault_tolerance": 8,
+      "scalability": 10,
+      "security_level": "Standard",
+      "operational_cost": "Variable (Scaling-based)",
+      "traffic_capacity": "1M+ Concurrent Users",
+      "failover_strategy": "Queue-based Backpressure & DLQ",
+      "primary_stack": {
+        "database": "DynamoDB",
+        "messaging": "RabbitMQ",
+        "caching": "Redis"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "cf-worker", "label": "Cloudflare Waiting Room", "type": "gateway" },
+        { "id": "order-srv", "label": "Order Service", "type": "backend" },
+        { "id": "cache", "label": "Redis Catalog Cache", "type": "cache" },
+        { "id": "queue", "label": "RabbitMQ Cluster", "type": "other" },
+        { "id": "inv-srv", "label": "Inventory Worker", "type": "backend" },
+        { "id": "db", "label": "DynamoDB", "type": "database" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "cf-worker", "target": "order-srv" },
+        { "id": "e2", "source": "order-srv", "target": "cache" },
+        { "id": "e3", "source": "order-srv", "target": "queue" },
+        { "id": "e4", "source": "queue", "target": "inv-srv" },
+        { "id": "e5", "source": "inv-srv", "target": "db" }
+      ]
+    }
+  },
+  {
+    "name": "Low-Latency Global Edge Delivery Network",
+    "category": "Performance",
+    "industry": "Streaming",
+    "survivability": 96,
+    "complexity": 85,
+    "description": "A content-centric architecture that pushes media assets to the extreme edge. It uses hierarchical caching where 'hot' content resides in ISP-local caches.",
+    "metadata": {
+      "archetype": "tiered-cdn-mesh",
+      "fault_tolerance": 9,
+      "scalability": 9,
+      "security_level": "Standard (Signed URLs)",
+      "operational_cost": "High (Bandwidth Heavy)",
+      "traffic_capacity": "100Tbps+ Total Throughput",
+      "failover_strategy": "Anycast Routing to Nearest POP",
+      "primary_stack": {
+        "database": "S3 (Metadata Index)",
+        "messaging": "gRPC Signaling",
+        "caching": "Varnish / Nginx Edge"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "edge-pop", "label": "Global Edge POP", "type": "gateway" },
+        { "id": "reg-hub", "label": "Regional Hub Cache", "type": "cache" },
+        { "id": "origin", "label": "Origin S3 Bucket", "type": "storage" },
+        { "id": "transcoder", "label": "Transcode Worker", "type": "backend" },
+        { "id": "index", "label": "Asset Index (DB)", "type": "database" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "edge-pop", "target": "reg-hub" },
+        { "id": "e2", "source": "reg-hub", "target": "origin" },
+        { "id": "e3", "source": "transcoder", "target": "origin" },
+        { "id": "e4", "source": "transcoder", "target": "index" },
+        { "id": "e5", "source": "edge-pop", "target": "index" }
+      ]
+    }
+  },
+  {
+    "name": "Production-Scale LLM Inference Pipeline",
+    "category": "Performance",
+    "industry": "AI/ML",
+    "survivability": 90,
+    "complexity": 95,
+    "description": "A compute-intensive pipeline designed for serving large language models at scale, featuring sophisticated request batching and distributed KV-caching.",
+    "metadata": {
+      "archetype": "gpu-accelerated-inference",
+      "fault_tolerance": 7,
+      "scalability": 10,
+      "security_level": "Standard",
+      "operational_cost": "Extreme (GPU)",
+      "traffic_capacity": "High Inference (Batching)",
+      "failover_strategy": "Dynamic Worker Pool Re-provisioning",
+      "primary_stack": {
+        "database": "Qdrant (Vector)",
+        "messaging": "gRPC / Ray",
+        "caching": "vLLM KV-Cache"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "api-gw", "label": "Inference API Gateway", "type": "gateway" },
+        { "id": "batcher", "label": "Request Batcher", "type": "backend" },
+        { "id": "gpu-pool", "label": "GPU Cluster (vLLM)", "type": "other" },
+        { "id": "kv-cache", "label": "Distributed KV-Cache", "type": "cache" },
+        { "id": "vector-db", "label": "Qdrant Cluster", "type": "database" },
+        { "id": "models", "label": "Model Registry (S3)", "type": "storage" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "api-gw", "target": "batcher" },
+        { "id": "e2", "source": "batcher", "target": "gpu-pool" },
+        { "id": "e3", "source": "gpu-pool", "target": "kv-cache" },
+        { "id": "e4", "source": "gpu-pool", "target": "vector-db" },
+        { "id": "e5", "source": "gpu-pool", "target": "models" }
+      ]
+    }
+  },
+  {
+    "name": "High-Volume Telemetry Ingestion Engine",
+    "category": "Scalability",
+    "industry": "IoT",
+    "survivability": 92,
+    "complexity": 75,
+    "description": "A specialized ingestion pipeline handling millions of concurrent IoT connections using MQTT and a fast-path/slow-path architecture.",
+    "metadata": {
+      "archetype": "lambda-iot-pipeline",
+      "fault_tolerance": 8,
+      "scalability": 10,
+      "security_level": "High (mTLS)",
+      "operational_cost": "Medium-High",
+      "traffic_capacity": "10M+ Concurrent Devices",
+      "failover_strategy": "MQTT Broker Clustering",
+      "primary_stack": {
+        "database": "InfluxDB (Time-Series)",
+        "messaging": "Apache Pulsar",
+        "caching": "Redis (Device State)"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "mqtt", "label": "EMQX MQTT Broker", "type": "gateway" },
+        { "id": "flink", "label": "Flink Stream Proc", "type": "backend" },
+        { "id": "pulsar", "label": "Apache Pulsar", "type": "other" },
+        { "id": "tsdb", "label": "InfluxDB Cluster", "type": "database" },
+        { "id": "s3", "label": "Cold Storage (S3)", "type": "storage" },
+        { "id": "state", "label": "Device State (Redis)", "type": "cache" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "mqtt", "target": "flink" },
+        { "id": "e2", "source": "mqtt", "target": "pulsar" },
+        { "id": "e3", "source": "flink", "target": "tsdb" },
+        { "id": "e4", "source": "flink", "target": "state" },
+        { "id": "e5", "source": "pulsar", "target": "s3" }
+      ]
+    }
+  },
+  {
+    "name": "Massively Multiplayer Real-Time State Sync",
+    "category": "Real-Time",
+    "industry": "Gaming",
+    "survivability": 88,
+    "complexity": 98,
+    "description": "A high-frequency synchronization engine maintaining world state across thousands of players using spatial partitioning and authoritative servers.",
+    "metadata": {
+      "archetype": "authoritative-state-sync",
+      "fault_tolerance": 6,
+      "scalability": 8,
+      "security_level": "Standard (Anti-Cheat)",
+      "operational_cost": "High (Compute Latency)",
+      "traffic_capacity": "100k Concurrent CCU",
+      "failover_strategy": "Match Re-hosting / Instance Migration",
+      "primary_stack": {
+        "database": "Redis (World State)",
+        "messaging": "UDP / QUIC",
+        "caching": "Local Memory Grid"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "match-gw", "label": "Matchmaking Gateway", "type": "gateway" },
+        { "id": "game-srv-1", "label": "Regional Game Server", "type": "backend" },
+        { "id": "game-srv-2", "label": "Regional Game Server", "type": "backend" },
+        { "id": "backplane", "label": "Redis State Backplane", "type": "cache" },
+        { "id": "world-db", "label": "Persistent World DB", "type": "database" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "match-gw", "target": "game-srv-1" },
+        { "id": "e2", "source": "match-gw", "target": "game-srv-2" },
+        { "id": "e3", "source": "game-srv-1", "target": "backplane" },
+        { "id": "e4", "source": "game-srv-2", "target": "backplane" },
+        { "id": "e5", "source": "backplane", "target": "world-db" }
+      ]
+    }
+  },
+  {
+    "name": "Distributed WebRTC Signaling & Media Mesh",
+    "category": "Real-Time",
+    "industry": "Real-time Communication",
+    "survivability": 92,
+    "complexity": 88,
+    "description": "A global mesh of Selective Forwarding Units (SFUs) routing video/audio streams efficiently with a highly available signaling layer.",
+    "metadata": {
+      "archetype": "sfu-media-mesh",
+      "fault_tolerance": 8,
+      "scalability": 9,
+      "security_level": "High (DTLS/SRTP)",
+      "operational_cost": "Premium (Bandwidth)",
+      "traffic_capacity": "1M+ Concurrent Streams",
+      "failover_strategy": "Cascading SFU Redundancy",
+      "primary_stack": {
+        "database": "PostgreSQL (Session Data)",
+        "messaging": "Elixir/Phoenix (Signal)",
+        "caching": "Redis (Orchestration)"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "sig-srv", "label": "Signaling Engine", "type": "gateway" },
+        { "id": "sfu-1", "label": "Media SFU (Region A)", "type": "backend" },
+        { "id": "sfu-2", "label": "Media SFU (Region B)", "type": "backend" },
+        { "id": "turn", "label": "Coturn (STUN/TURN)", "type": "other" },
+        { "id": "sess-db", "label": "Session DB", "type": "database" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "sig-srv", "target": "sfu-1" },
+        { "id": "e2", "source": "sig-srv", "target": "sfu-2" },
+        { "id": "e3", "source": "sfu-1", "target": "turn" },
+        { "id": "e4", "source": "sfu-2", "target": "turn" },
+        { "id": "e5", "source": "sig-srv", "target": "sess-db" }
+      ]
+    }
+  },
+  {
+    "name": "Multi-Tenant Enterprise SaaS Mesh",
+    "category": "Modernization",
+    "industry": "SaaS",
+    "survivability": 90,
+    "complexity": 80,
+    "description": "A customizable multi-tenant architecture providing strict data isolation using a metadata-driven engine.",
+    "metadata": {
+      "archetype": "multi-tenant-metadata-mesh",
+      "fault_tolerance": 7,
+      "scalability": 9,
+      "security_level": "Highest (RLS/Isolation)",
+      "operational_cost": "Medium-High",
+      "traffic_capacity": "50k+ Tenants",
+      "failover_strategy": "Tenant-based Shard Migration",
+      "primary_stack": {
+        "database": "PostgreSQL (RLS)",
+        "messaging": "Sidekiq / Redis",
+        "caching": "Redis (Metadata)"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "envoy", "label": "Envoy / API Gateway", "type": "gateway" },
+        { "id": "app-tier", "label": "Core App Engine", "type": "backend" },
+        { "id": "meta-srv", "label": "Metadata Service", "type": "backend" },
+        { "id": "tenant-db", "label": "Sharded Tenant DB", "type": "database" },
+        { "id": "jobs", "label": "Sidekiq Workers", "type": "backend" },
+        { "id": "cache", "label": "Tenant Cache", "type": "cache" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "envoy", "target": "app-tier" },
+        { "id": "e2", "source": "app-tier", "target": "meta-srv" },
+        { "id": "e3", "source": "app-tier", "target": "tenant-db" },
+        { "id": "e4", "source": "app-tier", "target": "jobs" },
+        { "id": "e5", "source": "app-tier", "target": "cache" }
+      ]
+    }
+  },
+  {
+    "name": "Hybrid-Cloud Legacy Modernization Wrapper",
+    "category": "Modernization",
+    "industry": "Enterprise Systems",
+    "survivability": 85,
+    "complexity": 85,
+    "description": "An interim architecture bridging on-premises legacy systems with cloud services using the 'Strangler Fig' pattern.",
+    "metadata": {
+      "archetype": "strangler-fig-bridge",
+      "fault_tolerance": 7,
+      "scalability": 7,
+      "security_level": "High (VPN/PrivateLink)",
+      "operational_cost": "High (Dual Infrastructure)",
+      "traffic_capacity": "Enterprise Scale",
+      "failover_strategy": "Manual / Hybrid Routing Fallback",
+      "primary_stack": {
+        "database": "Cloud SQL + On-Prem Oracle",
+        "messaging": "Azure Service Bus",
+        "caching": "Redis"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "azure-apim", "label": "Azure API Management", "type": "gateway" },
+        { "id": "modern-svc", "label": "Modern Microservice", "type": "backend" },
+        { "id": "exp-route", "label": "ExpressRoute / VPN", "type": "gateway" },
+        { "id": "legacy-erp", "label": "Legacy ERP (On-Prem)", "type": "backend" },
+        { "id": "oracle", "label": "Legacy Oracle DB", "type": "database" },
+        { "id": "cloud-db", "label": "Modern Cloud DB", "type": "database" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "azure-apim", "target": "modern-svc" },
+        { "id": "e2", "source": "azure-apim", "target": "exp-route" },
+        { "id": "e3", "source": "exp-route", "target": "legacy-erp" },
+        { "id": "e4", "source": "legacy-erp", "target": "oracle" },
+        { "id": "e5", "source": "modern-svc", "target": "cloud-db" }
+      ]
+    }
+  },
+  {
+    "name": "Distributed Log-Search & Observability Grid",
+    "category": "Scalability",
+    "industry": "DevOps / Infrastructure",
+    "survivability": 95,
+    "complexity": 78,
+    "description": "A massive-scale indexing system with a decoupled ingest-to-storage pipeline and distributed query engine.",
+    "metadata": {
+      "archetype": "decoupled-search-grid",
+      "fault_tolerance": 9,
+      "scalability": 10,
+      "security_level": "Standard",
+      "operational_cost": "Medium-Variable",
+      "traffic_capacity": "Petabytes / Day",
+      "failover_strategy": "Index Replica Promotion",
+      "primary_stack": {
+        "database": "ClickHouse / Lucene",
+        "messaging": "Vector / Kafka",
+        "caching": "Local SSD Cache"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "ingester", "label": "Log Ingester", "type": "gateway" },
+        { "id": "indexer", "label": "Indexer Node", "type": "backend" },
+        { "id": "search-node", "label": "Search Node", "type": "backend" },
+        { "id": "clickhouse", "label": "ClickHouse Cluster", "type": "database" },
+        { "id": "cold-storage", "label": "S3 Cold Storage", "type": "storage" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "ingester", "target": "indexer" },
+        { "id": "e2", "source": "indexer", "target": "clickhouse" },
+        { "id": "e3", "source": "search-node", "target": "clickhouse" },
+        { "id": "e4", "source": "clickhouse", "target": "cold-storage" }
+      ]
+    }
+  },
+  {
+    "name": "Secure Healthcare Data Exchange",
+    "category": "Security & Compliance",
+    "industry": "Healthcare",
+    "survivability": 97,
+    "complexity": 92,
+    "description": "A highly regulated architecture focused on secure health data exchange following FHIR standards and zero-trust principles.",
+    "metadata": {
+      "archetype": "zero-trust-health-mesh",
+      "fault_tolerance": 9,
+      "scalability": 8,
+      "security_level": "Highest (HIPAA/FHIR)",
+      "operational_cost": "Premium",
+      "traffic_capacity": "National Exchange Level",
+      "failover_strategy": "Immutable Audit-Logged Failover",
+      "primary_stack": {
+        "database": "Azure Health Data Svc",
+        "messaging": "Private Service Bus",
+        "caching": "Encrypted Redis"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "auth-gw", "label": "mTLS Auth Gateway", "type": "gateway" },
+        { "id": "fhir-api", "label": "FHIR API Service", "type": "backend" },
+        { "id": "vault", "label": "HashiCorp Vault", "type": "other" },
+        { "id": "hsm", "label": "Cloud HSM", "type": "other" },
+        { "id": "audit-db", "label": "Audit Ledger DB", "type": "database" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "auth-gw", "target": "fhir-api" },
+        { "id": "e2", "source": "fhir-api", "target": "vault" },
+        { "id": "e3", "source": "fhir-api", "target": "hsm" },
+        { "id": "e4", "source": "fhir-api", "target": "audit-db" }
+      ]
+    }
+  },
+  {
+    "name": "Real-Time Ad-Bidding & Exchange",
+    "category": "Real-Time",
+    "industry": "AdTech",
+    "survivability": 85,
+    "complexity": 95,
+    "description": "An ultra-low latency architecture designed to complete auctions in under 100ms using in-memory data grids.",
+    "metadata": {
+      "archetype": "ultra-low-latency-auction",
+      "fault_tolerance": 6,
+      "scalability": 10,
+      "security_level": "Standard",
+      "operational_cost": "High (Network Peering)",
+      "traffic_capacity": "1M+ Bids / Sec",
+      "failover_strategy": "Lossy Shedding / Partial Auction",
+      "primary_stack": {
+        "database": "Aerospike",
+        "messaging": "gRPC / ZeroMQ",
+        "caching": "In-Memory Profile Grid"
+      }
+    },
+    "topology": {
+      "nodes": [
+        { "id": "glb", "label": "Global LB (Edge)", "type": "gateway" },
+        { "id": "bid-worker", "label": "Bidding Engine (Go)", "type": "backend" },
+        { "id": "aerospike", "label": "Aerospike Cluster", "type": "database" },
+        { "id": "inventory", "label": "Ad Inventory DB", "type": "database" },
+        { "id": "tracker", "label": "Pixel Tracker", "type": "backend" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "glb", "target": "bid-worker" },
+        { "id": "e2", "source": "bid-worker", "target": "aerospike" },
+        { "id": "e3", "source": "bid-worker", "target": "inventory" },
+        { "id": "e4", "source": "tracker", "target": "inventory" }
+      ]
+    }
+  }
+]

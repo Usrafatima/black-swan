@@ -415,21 +415,6 @@ export default function Home() {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
-
-      <style jsx global>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 2px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #111;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #222;
-        }
-      `}</style>
     </main>
   );
 }

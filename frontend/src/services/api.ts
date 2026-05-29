@@ -35,7 +35,7 @@ export const simulateLoad = async (
   return response.json();
 };
 
-export const searchSimilar = async (architectureId: string, text: string, limit: int = 3): Promise<AnalysisResult[]> => {
+export const searchSimilar = async (architectureId: string, text: string, limit: number = 3): Promise<AnalysisResult[]> => {
   const response = await fetch(`${API_BASE_URL}/search-similar`, {
     method: 'POST',
     headers: {

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { X, Shield, Activity, Globe, Info, Zap, Target, Cpu } from 'lucide-react';
+import { X, Shield, Activity, Globe, Info, Zap, Target, Cpu, Terminal } from 'lucide-react';
 import { AnalysisResult } from '../types';
 
 interface PatternDetailModalProps {
@@ -111,7 +111,7 @@ const PatternDetailModal = ({ pattern, isOpen, onClose }: PatternDetailModalProp
               {(pattern as any).metadata?.primary_stack && (
                 <section className="space-y-3">
                   <div className="flex items-center gap-2 text-blue-500 font-mono text-[11px] uppercase tracking-widest font-black border-b border-white/5 pb-2">
-                    <TerminalIcon size={14} />
+                    <Terminal size={14} />
                     Primary_Infrastructure_Stack
                   </div>
                   <div className="grid grid-cols-3 gap-3 text-[10px] font-mono">

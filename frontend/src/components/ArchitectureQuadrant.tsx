@@ -60,11 +60,11 @@ const ArchitectureQuadrant = ({ matches, onSelect }: ArchitectureQuadrantProps) 
 
         {/* Dynamic Nodes */}
         {matches.map((arch) => {
-          // Calculate positions (X: Fragility -> Resilience, Y: Complexity -> Scalability)
+          // Calculate positions (X: Fragility -> Resilience, Y: Scalability -> Complexity)
           // X: Resilience (0 -> 100)
-          // Y: Scalability (0 -> 100) but Complexity is Top, so 100 - Scalability
+          // Y: Complexity (0 -> 100)
           const left = arch.isCurrent ? 20 : (arch.survivability * 0.7) + 15;
-          const top = arch.isCurrent ? 30 : (arch.complexity * 0.7) + 15;
+          const top = arch.isCurrent ? 70 : 85 - (arch.complexity * 0.7);
 
           return (
             <motion.div
@@ -92,13 +92,25 @@ const ArchitectureQuadrant = ({ matches, onSelect }: ArchitectureQuadrantProps) 
                 </div>
 
                 {/* Floating Card (Shows on Hover) */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover/node:opacity-100 transition-all pointer-events-none translate-y-2 group-hover/node:translate-y-0 w-32">
-                   <div className="bg-black/90 border border-white/10 backdrop-blur-md p-2 rounded-sm shadow-2xl">
-                      <div className="text-[8px] font-black uppercase tracking-tight text-white mb-1 truncate">{arch.name}</div>
-                      <div className="flex justify-between items-center text-[7px] font-mono">
-                         <span className="text-slate-500 uppercase">Survivability</span>
-                         <span className={arch.survivability > 80 ? 'text-green-400' : 'text-red-400'}>{arch.survivability}%</span>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 opacity-0 group-hover/node:opacity-100 transition-all pointer-events-none translate-y-2 group-hover/node:translate-y-0 w-40 z-[60]">
+                   <div className="bg-black/95 border border-white/10 backdrop-blur-md p-3 rounded-sm shadow-2xl">
+                      <div className="text-[9px] font-black uppercase tracking-tight text-white mb-2 truncate border-b border-white/10 pb-1">{arch.name}</div>
+                      
+                      <div className="space-y-1">
+                        <div className="flex justify-between items-center text-[7px] font-mono">
+                           <span className="text-slate-500 uppercase">Survivability</span>
+                           <span className={arch.survivability > 80 ? 'text-green-400' : arch.survivability > 50 ? 'text-amber-400' : 'text-red-400'}>{arch.survivability}%</span>
+                        </div>
+                        <div className="flex justify-between items-center text-[7px] font-mono">
+                           <span className="text-slate-500 uppercase">Complexity</span>
+                           <span className={arch.complexity < 40 ? 'text-green-400' : arch.complexity < 75 ? 'text-amber-400' : 'text-red-400'}>{arch.complexity}%</span>
+                        </div>
+                        <div className="flex justify-between items-center text-[7px] font-mono">
+                           <span className="text-slate-500 uppercase">Category</span>
+                           <span className="text-cyan-500">{arch.category}</span>
+                        </div>
                       </div>
+
                       <div className="mt-2 pt-1 border-t border-white/5 flex items-center justify-between text-[6px] font-mono text-cyan-700 font-bold uppercase tracking-widest">
                          <span>Analyze Details</span>
                          <TrendingUp size={8} />
